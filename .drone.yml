@@ -1,9 +1,16 @@
 kind: pipeline
-name: hello-world
-type: docker
-
-steps:
-  - name: say-hello
-    image: busybox
-    commands:
-      - echo hello-world
+name: packerboy
+build:
+  image: appleboy/drone-packer
+  environment:
+    - MYAPPENV=prod
+    - WORKDIR=${CI_BUILD_DIR}
+    - BRANCH=${CI_BRANCH}
+    - BUILD_VERSION=${CI_BRANCH}-${CI_COMMIT:0:8}
+  secrets: [ docker_username, docker_password ]
+  template: build.json
+  actions:
+    - validate
+    - build
+  when:
+    branch: [ master, staging ]

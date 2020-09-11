@@ -1,16 +1,5 @@
-kind: pipeline
-name: packerboy
-build:
-  image: appleboy/drone-packer
-  environment:
-    - MYAPPENV=prod
-    - WORKDIR=${CI_BUILD_DIR}
-    - BRANCH=${CI_BRANCH}
-    - BUILD_VERSION=${CI_BRANCH}-${CI_COMMIT:0:8}
-  secrets: [ docker_username, docker_password ]
-  template: build.json
-  actions:
-    - validate
-    - build
-  when:
-    branch: [ master, staging ]
+pipeline:
+  packer:
+    image: appleboy/drone-packer
+    template: template.json
+    actions: build

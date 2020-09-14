@@ -7,7 +7,7 @@
    "vsphere_datastore": "$VSPHERE_DATASTORE",
    "vsphere_cluster": "$VSPHERE_CLUSTER",
    "folder": "templates",
-   "network": "$VSPHERE_NETWORK",
+   "vsphere_network": "$VSPHERE_NETWORK",
    "host": "",
  
    "ssh_username": "vagrant",

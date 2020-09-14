@@ -4,9 +4,6 @@ name: default
 steps:
 - name: build
   image: appleboy/drone-packer
-  environment:
-    USERNAME:
-      from_secret: docker_username
   template: ubuntu2004.json
   force: true
   var_files:

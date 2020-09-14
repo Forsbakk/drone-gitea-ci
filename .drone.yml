@@ -5,7 +5,7 @@ steps:
 - name: build
   image: alpine
   environment:
-    USERNAME:
+    VCENTER_SERVER:
       from_secret: vcenter_username
     PASSWORD:
       from_secret: vcenter_password

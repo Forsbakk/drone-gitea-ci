@@ -1,12 +1,9 @@
 pipeline:
-     packer:
-       image: appleboy/drone-packer
-       environment:
-         VCENTER_SERVER:
-           from_secret: vcenter_server
-       template: ubuntu2004.json
-       actions: build
-       force: true
-       var_files:
-        - variables.json
-        - template.json
+      packer:
+        image: appleboy/drone-packer
+        environment:
+          VCENTER_SERVER:
+            from_secret: vcenter_server
+        template: ubuntu2004.json
+        actions: build
+        force: true

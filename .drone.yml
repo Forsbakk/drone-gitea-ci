@@ -3,7 +3,6 @@ pipeline:
     image: appleboy/drone-packer
     template: ubuntu2004.json
     actions: build
-    force: true
     environment:
       VCENTER_SERVER:
         from_secret: vcenter_server

@@ -1,8 +1,6 @@
 pipeline:
      packer:
        image: appleboy/drone-packer
-       commands:
-        - echo $VCENTER_SERVER
        environment:
          VCENTER_SERVER:
            from_secret: vcenter_server

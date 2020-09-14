@@ -1,5 +1,9 @@
 pipeline:
-  packer:
-    image: appleboy/drone-packer
-    template: template.json
-    actions: build
+     packer:
+       image: appleboy/drone-packer
+       template: ubuntu2004.json
+       actions: build
+       force: true
+       var_files:
+        - variables.json
+        - template.json

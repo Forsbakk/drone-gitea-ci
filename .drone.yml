@@ -7,8 +7,10 @@ steps:
   environment:
     VCENTER_SERVER:
       from_secret: vcenter_server
-    PASSWORD:
+    VCENTER_USERNAME:  
+      from_secret: vcenter_username
+    VCENTER_PASSWORD:
       from_secret: vcenter_password
+      
   commands:
     - packer build --var-file=variables.json -var-file=template.json ubuntu2004.json
-    - echo $VCENTER_SERVER

@@ -8,7 +8,7 @@
    "vsphere_cluster": "{{ env `VSPHERE_CLUSTER` }}", 
    "folder": "templates", 
    "vsphere_network": "{{ env `VSPHERE_NETWORK` }}", 
-   "host": "", 
+   "host": "{{ env `VSPHERE_HOST` }}", 
   
    "ssh_username": "vagrant", 
    "ssh_password": "vagrant",   

@@ -1,9 +1,9 @@
 pipeline:
   test:
-    image: golang:1.10-alpine
+    image: hashicorp/packer
     environment:
-      - MYAPPENV=test
+      from_secret: vcenter_server
     commands:
-      - apk add --update --no-cache make
+      - echo $VCENTER_SERVER
       - make build
       - make test

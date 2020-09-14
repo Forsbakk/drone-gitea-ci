@@ -10,4 +10,5 @@ steps:
     PASSWORD:
       from_secret: vcenter_password
   commands:
+    - packer build --var-file=variables.json -var-file=template.json ubuntu2004.json
     - echo $VCENTER_SERVER

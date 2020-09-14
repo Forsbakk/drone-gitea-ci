@@ -1,17 +1,9 @@
-workspace:
-  base: /build
-
 pipeline:
-
-  packer:
-    detach: true
-    image: hashicorp/packer
+  test:
+    image: golang:1.10-alpine
     environment:
-    VCENTER_SERVER:
-      from_secret: vcenter_server
+      - MYAPPENV=test
     commands:
-      - echo $VCENTER_SERVER
-      - packer build ubuntu2004.json
-    var_files:
-      - template.json
-      - variables.json
+      - apk add --update --no-cache make
+      - make build
+      - make test

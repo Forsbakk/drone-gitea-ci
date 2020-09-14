@@ -6,7 +6,7 @@ steps:
   image: alpine
   environment:
     VCENTER_SERVER:
-      from_secret: vcenter_username
+      from_secret: vcenter_server
     PASSWORD:
       from_secret: vcenter_password
   commands:

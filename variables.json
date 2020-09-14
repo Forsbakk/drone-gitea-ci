@@ -1,1 +1,18 @@
-
+{
+   "vcenter_server": "",
+   "vcenter_username": "",
+   "vcenter_password": "",
+ 
+   "vsphere_datacenter": "",
+   "vsphere_datastore": "",
+   "vsphere_cluster": "",
+   "folder": "templates",
+   "network": "",
+   "host": "",
+ 
+   "ssh_username": "vagrant",
+   "ssh_password": "vagrant",
+ 
+   "winrm_password": "packer",
+   "winrm_username": "Administrator"
+ }

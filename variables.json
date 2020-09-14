@@ -4,7 +4,7 @@
    "vcenter_username": "{{ env `VCENTER_USERNAME` }}", 
    "vcenter_password": "{{ env `VCENTER_PASSWORD` }}", 
    "vsphere_datacenter": "{{ env `VSPHERE_DATACENTER` }}", 
-
+   "vsphere_datastore" : "{{ env `VSPHERE_DATASTORE`}}"
    "vsphere_cluster": "{{ env `VSPHERE_CLUSTER` }}", 
    "folder": "templates", 
    "vsphere_network": "{{ env `VSPHERE_NETWORK` }}", 

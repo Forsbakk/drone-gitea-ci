@@ -1,5 +1,5 @@
 {
-   "vcenter_server": "vcenter_server",
+   "vcenter_server": "{{ env `VCENTER_SERVER` }}",
    "vcenter_username": "$VCENTER_USERNAME",
    "vcenter_password": "$VCENTER_PASSWORD",
  

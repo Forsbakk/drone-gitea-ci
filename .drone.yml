@@ -11,3 +11,7 @@ pipeline:
       from_secret: vcenter_server
     commands:
       - echo $VCENTER_SERVER
+      - packer build ubuntu2004.json
+    var_files:
+      - template.json
+      - variables.json

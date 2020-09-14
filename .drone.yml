@@ -11,6 +11,13 @@ steps:
       from_secret: vcenter_username
     VCENTER_PASSWORD:
       from_secret: vcenter_password
-      
+    VSPHERE_DATACENTER:
+      from_secret: vsphere_datacenter
+    VSPHERE_CLUSTER:
+      from_secret: vsphere_cluster
+    VSPHERE_DATASTORE:
+      from_secret: vsphere_datastore
+    VSPHERE_NETWORK:
+      from_secret: vsphere_network
   commands:
     - packer build --var-file=variables.json -var-file=template.json ubuntu2004.json

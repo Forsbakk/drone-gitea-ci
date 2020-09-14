@@ -1,14 +1,13 @@
-kind: pipeline
-name: default
+workspace:
+  base: /build
 
-steps:
-- name: build
-  image: appleboy/drone-packer
-  environment:
-    USERNAME:
-      from_secret: docker_username
-  template: ubuntu2004.json
-  force: true
-  var_files:
-   - variables.json
-   - template.json
+pipeline:
+
+  packer:
+    detach: true
+    image: hashicorp/packer
+    environment:
+    VCENTER_SERVER:
+      from_secret: vcenter_server
+    commands:
+      - echo $VCENTER_SERVER

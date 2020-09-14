@@ -1,13 +1,13 @@
 {
-   "vcenter_server": "",
-   "vcenter_username": "",
-   "vcenter_password": "",
+   "vcenter_server": "$VCENTER_SERVER",
+   "vcenter_username": "$VCENTER_USERNAME",
+   "vcenter_password": "$VCENTER_PASSWORD",
  
-   "vsphere_datacenter": "",
-   "vsphere_datastore": "",
-   "vsphere_cluster": "",
+   "vsphere_datacenter": "$VSPHERE_DATACENTER",
+   "vsphere_datastore": "$VSPHERE_DATASTORE",
+   "vsphere_cluster": "$VSPHERE_CLUSTER",
    "folder": "templates",
-   "network": "",
+   "network": "$VSPHERE_NETWORK",
    "host": "",
  
    "ssh_username": "vagrant",

@@ -1,11 +1,11 @@
-pipeline: 
-  packer: 
-    image: appleboy/drone-packer 
-    template: ubuntu2004.json 
-    actions: build 
-    force: true 
-    secret_variables: [ vcenter_server, vcenter_username, vcenter_password ] 
-    secrets: [ vcenter_server, vcenter_username, vcenter_password ] 
-    var_files: 
-      - variables.json 
-      - template.json
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: alpine
+  environment:
+    USERNAME:
+      from_secret: vcenter_username
+    PASSWORD:
+      from_secret: vcenter_password

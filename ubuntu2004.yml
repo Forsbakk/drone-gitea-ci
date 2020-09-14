@@ -1,0 +1,78 @@
+{
+    "builders": [
+      {
+        "boot_command": [
+          "<esc><esc><esc>",
+          "<enter><wait>",
+          "/casper/vmlinuz ",
+          "root=/dev/sr0 ",
+          "initrd=/casper/initrd ",
+          "autoinstall ds=nocloud-net;s=https://ubuntu-2004-cloud-init.s3.beryju.org/",
+          "<enter>"
+        ],
+        "insecure_connection": "true",
+        "vcenter_server": "{{ user `vcenter_server` }}",
+        "username": "{{ user `vcenter_username` }}",
+        "password": "{{ user `vcenter_password` }}",
+        "cluster": "{{ user `vsphere_cluster` }}",
+        "datastore": "{{ user `vsphere_datastore` }}",
+        "folder": "{{user `folder`}}",
+        "host": "{{ user `host` }}",
+        "boot_wait": "5s",
+        "cpus": "{{ user `vcpus` }}",
+        "disk_controller_type": "{{ user `disk_controller_type` }}",
+        "guest_os_type": "ubuntu64Guest",
+        "convert_to_template": true,
+        "http_directory": "http",
+        "iso_checksum": "{{ user `iso_checksum` }}",
+        "iso_url": "{{ user `iso_url` }}",
+        "ram": "{{ user `ram` }}",
+        "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S bash 'shutdown.sh'",
+        "ssh_handshake_attempts": "20",
+        "ssh_password": "{{ user `ssh_password` }}",
+        "ssh_pty": true,
+        "ssh_timeout": "60m",
+        "ssh_username": "{{ user `ssh_username` }}",
+        "type": "vsphere-iso",
+        "vm_name": "{{ user `vm_name` }}",
+        "network_adapters": [
+          {
+            "network": "{{ user `network` }}",
+            "network_card": "{{ user `network_card` }}"
+          }
+        ],
+        "storage": [
+          {
+            "disk_size": "{{ user `disk_size` }}",
+            "disk_thin_provisioned": true
+          }
+        ]
+      }     
+     ],
+    "provisioners": [
+      {
+        "type": "shell",
+        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+        "script": "scripts/setup.sh"
+      },
+      {
+        "type": "shell",
+        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+        "script": "scripts/open-vm-tools.sh"
+      },
+      {
+        "type": "shell",
+        "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+        "script": "scripts/cleanup.sh"
+      }
+    ], 
+    "post-processors": [
+      [
+        {
+          "output": "manifest.json",
+          "strip_path": true,
+          "type": "manifest"
+        }
+      ]
+    ]
+  }

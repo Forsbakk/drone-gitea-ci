@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: build
-  image: appleboy/drone-packer
+  image: appleboy/drone-packe
   template: ubuntu2004.json
   force: true
   var_files:

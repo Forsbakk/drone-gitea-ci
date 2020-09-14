@@ -1,20 +1,16 @@
-kind: pipeline
-type: packer
-name: default
-
-steps:
-- name: build
-  image: appleboy/drone-packer
-  template: ubuntu2004.json
-  actions: build
-  force: true
-  environment:
-    VCENTER_SERVER:
-      from_secret: vcenter_server
-    VCENTER_USERNAME:
-      from_secret: vcenter_username
-    VCENTER_PASSWORD:
-      from_secret: vcenter_password
-  var_files:
-    - variables.json
-    - template.json
+pipeline:
+  packer:
+    image: appleboy/drone-packer
+    template: ubuntu2004.json
+    actions: build
+    force: true
+    variables:
+      VCENTER_SERVER:
+        from_secret: vcenter_server
+      VCENTER_USERNAME:
+        from_secret: vcenter_username
+      VCENTER_PASSWORD:
+        from_secret: vcenter_password
+    var_files:
+      - variables.json
+      - template.json

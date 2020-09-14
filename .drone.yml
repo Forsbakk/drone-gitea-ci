@@ -1,10 +1,11 @@
-pipeline:
-  test:
-    image: hashicorp/packer
-    environment:
-      VCENTER_SERVER:
-        from_secret: vcenter_server
-    commands:
-      - echo $VCENTER_SERVER
-      - make build
-      - make test
+pipeline: 
+  packer: 
+    image: appleboy/drone-packer 
+    template: ubuntu2004.json 
+    actions: build 
+    force: true 
+    secret_variables: [ vcenter_server, vcenter_username, vcenter_password ] 
+    secrets: [ vcenter_server, vcenter_username, vcenter_password ] 
+    var_files: 
+      - variables.json 
+      - template.jso

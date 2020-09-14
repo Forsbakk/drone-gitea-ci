@@ -8,4 +8,4 @@ pipeline:
     secrets: [ vcenter_server, vcenter_username, vcenter_password ] 
     var_files: 
       - variables.json 
-      - template.jso
+      - template.json

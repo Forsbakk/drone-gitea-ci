@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: build
-  image: alpine
+  image: hashicorp/packer
   environment:
     VCENTER_SERVER:
       from_secret: vcenter_server

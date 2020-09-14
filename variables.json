@@ -1,5 +1,5 @@
 {
-   "vcenter_server": "VCENTER_SERVER",
+   "vcenter_server": "vcenter_server",
    "vcenter_username": "$VCENTER_USERNAME",
    "vcenter_password": "$VCENTER_PASSWORD",
  

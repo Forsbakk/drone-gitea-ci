@@ -3,13 +3,9 @@
    "vcenter_server": "{{ env `VCENTER_SERVER` }}", 
    "vcenter_username": "{{ env `VCENTER_USERNAME` }}", 
    "vcenter_password": "{{ env `VCENTER_PASSWORD` }}", 
-   "vsphere_datacenter": "{{ env `VSPHERE_DATACENTER` }}", 
    "vsphere_datastore": "{{ env `VSPHERE_DATASTORE`}}",
    "vsphere_cluster": "{{ env `VSPHERE_CLUSTER` }}",
-   "resource_pool": "{{ env `RESOURCE_POOL` }}",
    "folder": "templates", 
-   "vsphere_network": "{{ env `VSPHERE_NETWORK` }}", 
-   "host": "{{ env `VSPHERE_HOST` }}", 
   
    "ssh_username": "vagrant", 
    "ssh_password": "vagrant",   

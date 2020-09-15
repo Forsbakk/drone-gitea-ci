@@ -17,7 +17,6 @@
         "cluster": "{{ user `vsphere_cluster` }}",
         "datastore": "{{ user `vsphere_datastore` }}",
         "folder": "{{user `folder`}}",
-        "host": "{{ user `host` }}",
         "boot_wait": "5s",
         "cpus": "{{ user `vcpus` }}",
         "disk_controller_type": "{{ user `disk_controller_type` }}",

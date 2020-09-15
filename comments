@@ -1,0 +1,7 @@
+   "vsphere_datacenter": "{{ env `VSPHERE_DATACENTER` }}",
+   "resource_pool": "{{ env `RESOURCE_POOL` }}",
+
+
+    "host": "{{ user `host` }}",
+    "vsphere_network": "{{ env `VSPHERE_NETWORK` }}", 
+    "host": "{{ env `VSPHERE_HOST` }}", 

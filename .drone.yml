@@ -21,5 +21,7 @@ steps:
       from_secret: vsphere_network
     RESOURCE_POOL:
       from_secret: resource_pool
+    HOST:
+      from_secret: host
   commands:
     - packer build --var-file=variables.json -var-file=template.json ubuntu2004.json
